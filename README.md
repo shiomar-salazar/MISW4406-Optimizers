@@ -32,9 +32,9 @@
 
 [Enlace al Diagrama General](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2.jpg)
 
-[Enlace al Diagrama AsIs](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2-AsIs.jpg)
+[Enlace al Diagrama AsIs](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo_S2_AsIs.jpg)
 
-[Enlace al Diagrama ToBe](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2-ToBe.jpg)
+[Enlace al Diagrama ToBe](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo_S2_ToBe.jpg)
 
 
 
