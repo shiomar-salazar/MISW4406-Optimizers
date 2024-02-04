@@ -28,9 +28,9 @@
 
 ### Diagramas de Dominio y Sub-Dominio
 
-[Enlace a Archivo de Codigo]()
+[Enlace a Archivo de Codigo](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Dominio_Subdominio.cml)
 
-[Enlace a Imagen Generada]()
+[Enlace a Imagen Generada](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Dominio_Subdominio_ContextMap.png)
 
 ### Diagramas de Flujo de Adquisición y enriquecimiento de datos automatizado
 
