@@ -46,6 +46,22 @@ Esta seccion del entregable no tiene fragmento de codigo porque fue creado en la
 
 ### Diagramas de Contexto Acotado
 
-[Enlace a Archivo de Codigo]()
+#### Contexto Acotado AsIs
+Archivo de código:
+- [Flujo AsIs](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextAsIs_v1_completo.cml)
 
-[Enlace a Imagen Generada]()
+Archivo de imagen generada:
+- [Flujo AsIs](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextAsIs_v1_completo_ContextMap.png)
+
+#### Contexto Acotado ToBe
+Debido a que, al momento de generar la imagen del flujo completo, la imagen no se visualiza muy bien, ya que se repisan las líneas del flujo automatizado y el flujo de manual, se comparten los archivos e imágenes del flujo completo, el flujo con la parte automatizada nomas y el flujo con la parte manual nomas.
+
+Archivo de codigo:
+- [Flujo ToBe Completo](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_completo.cml)
+- [Flujo ToBe Automatizado](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_automatizado.cml)
+- [Flujo ToBe Manual](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_manual.cml)
+
+Archivo de imagen generada:
+- [Flujo ToBe Completo](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_completo_ContextMap.png)
+- [Flujo ToBe Automatizado](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_automatizado_ContextMap.png)
+- [Flujo ToBe Manual](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/BoundedContextToBe_v1_manual_ContextMap.png)
