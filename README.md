@@ -21,12 +21,20 @@
 
 [Enlace a la carpeta de la Entrega](https://github.com/shiomar-salazar/MISW4406-Optimizers/tree/master/EntregaSemana2)
 
+### Estructura del proyecto
+
+1. Este proyecto fue creado usando un fork del demo obtenido de: https://contextmapper.org/demo/
+2. Se agrego una carpeta para los Entregables de la semana 2, llamada "EntregaSemana2", en esta carpeta estaran los elementos de codigo y archivos de imagenes o texto que se requieren en la entrega semanal
+
 ### Diagramas de Dominio y Sub-Dominio
 
+[Enlace a Archivo de Codigo]()
 
-
+[Enlace a Imagen Generada]()
 
 ### Diagramas de Flujo de Adquisición y enriquecimiento de datos automatizado
+
+Esta seccion del entregable no tiene fragmento de codigo porque fue creado en la herramienta externa Miro.
 
 [Enlace al Miro](https://miro.com/app/board/uXjVNxoJPKA=/?share_link_id=642981170674)
 
@@ -36,7 +44,8 @@
 
 [Enlace al Diagrama ToBe](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo_S2_ToBe.jpg)
 
-
-
 ### Diagramas de Contexto Acotado
 
+[Enlace a Archivo de Codigo]()
+
+[Enlace a Imagen Generada]()
