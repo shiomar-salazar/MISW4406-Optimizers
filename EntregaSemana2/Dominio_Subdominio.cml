@@ -1,1 +1,103 @@
+ContextMap Dominio_Subdominio {
+  type SYSTEM_LANDSCAPE
+  state AS_IS
 
+	contains ContextoCatalogo
+	contains ContextoInformacionCatastral
+	contains ContextoInformacionContractual
+  contains ContextoInformacionGeoespacial
+  contains ContextoInformacionDeCampo
+  contains ContextoCompanias
+	contains ContextoMotorDeExtraccion
+  contains ContextoConsolidacionDatos
+  contains ContextoAnalitica	
+	contains ContextoAuditoria
+  contains ContextoBigData
+
+    
+  ContextoMotorDeExtraccion [D]<-[U] ContextoCompanias
+  ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionContractual
+  ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionGeoespacial
+  ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionCatastral
+  ContextoMotorDeExtraccion [D]<-[U] ContextoConsolidacionDatos
+  ContextoConsolidacionDatos [D]<-[U] ContextoAnalitica
+  ContextoInformacionDeCampo [D]<-[U] ContextoConsolidacionDatos
+  ContextoAnalitica [D]<-[U] ContextoBigData
+  ContextoAnalitica [D]<-[U] ContextoAuditoria
+  ContextoAnalitica [D]<-[U] ContextoCatalogo 
+
+}
+
+BoundedContext ContextoCatalogo implements CatalogoBienesRaices
+BoundedContext ContextoInformacionCatastral implements CatalogoBienesRaices
+BoundedContext ContextoInformacionGeoespacial implements CatalogoBienesRaices
+BoundedContext ContextoInformacionContractual implements InformacionContractual
+BoundedContext ContextoCompanias implements CatalogoCompanias
+BoundedContext ContextoInformacionDeCampo implements CatalogoBienesRaices, CatalogoCompanias, InformacionContractual
+BoundedContext ContextoMotorDeExtraccion implements CatalogoBienesRaices, CatalogoCompanias, InformacionContractual
+BoundedContext ContextoConsolidacionDatos implements BigData
+BoundedContext ContextoAnalitica implements BigData
+BoundedContext ContextoAuditoria implements BigData
+BoundedContext ContextoBigData implements BigData
+
+
+
+Domain BienesRaicesAlpes {
+  domainVisionStatement = "Dominio principal cuyo enfoque es proveer informacion detallada de bienes raices comerciales tales como tamano, tipo de construccion, zonificacion, 
+                           numero de pisos, fotografias, etc; listados de arriendos/subarriendos y ventas; informacion precisa sobre propietarios y arrendatarios; transacciones de ventas y 
+                           arrendamientos, y herramientas para procesar, analizar y transformar los datos de forma que se garantice una alta calidad en los datos a presentar a los clientes."
+
+  Subdomain CatalogoBienesRaices {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Subdominio que gestiona todo lo relacionado con informacion de bienes inmuebles comerciales que inclute tanto informacion geografica (GIS) como informacion catastral 
+                             y de planos de forma que se pueda crear un catalogo con informacion muy detallada de los bienes inmuebles. Esta informacion es adquirida de forma automatizada o a traves de investigadores humanos de campo."
+
+    Entity BienInmueble {
+      String numeroEscrituraPublica  
+      String tipoConstruccion
+      String direccion
+    }
+    
+  }
+
+  Subdomain InformacionContractual {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Subdominio que gestiona todo lo relacionado con informacion de los movimientos en el mercado de bienes raices comerciales, tales como, compra, venta, arriendos y subarriendos 
+                             realizados por los los actores involucrados en este mercado. Esta informacion es adquirida de forma automatizada o a traves de investigadores humanos de campo."
+
+    Entity Transaccion {
+      String numeroContrato
+      String comprador
+      String vendedor
+      Float valorTransaccion
+    }
+    
+  }
+
+  Subdomain CatalogoCompanias {
+    type = CORE_DOMAIN
+    domainVisionStatement = "Subdominio que gestiona todo lo relacionado con informacion de companias, es decir, todos los actores involucrados en el mercado de bienes raices comerciales, 
+                             tales como vendedores, compradores, arrendadores y arrendatarios. Esta informacion es adquirida de forma automatizada o a traves de investigadores humanos de campo."
+
+    Entity Actor {
+      String cedula
+      String nombre
+      String apellido
+    }
+    
+  }
+
+  Subdomain BigData {
+    type = GENERIC_SUBDOMAIN
+    domainVisionStatement = "Subdominio que gestiona todo lo relacionado con el proceso, análisis, transformación de datos, y aplicacion de modelos de aprendizaje automático complejos,
+                             a traves de pipelines automatizados, para garantizar una alta calidad en los datos que se van a presentar a los clientes."
+
+    Entity IngestionDatos {
+      String formatoDatos
+      String fuenteDatos
+      String formaAdquisicionDatos      
+    }
+    
+  }
+
+}
