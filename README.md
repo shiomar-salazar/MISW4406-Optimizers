@@ -1,6 +1,6 @@
 # Repositorio del Equipo Optimizers de la Materia MISW4406-2024-11
 
-# Integrantes:
+## Integrantes:
 
 |   Nombre                         |   Correo                      | Codigo    | 
 |----------------------------------|-------------------------------|-----------|
@@ -30,7 +30,7 @@
 
 [Enlace al Miro](https://miro.com/app/board/uXjVNxoJPKA=/?share_link_id=642981170674)
 
-[Enlace al Diagrama General](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2-AsIs.jpg)
+[Enlace al Diagrama General](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2.jpg)
 
 [Enlace al Diagrama AsIs](https://github.com/shiomar-salazar/MISW4406-Optimizers/blob/master/EntregaSemana2/Flujo-S2-AsIs.jpg)
 
