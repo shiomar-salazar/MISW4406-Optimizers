@@ -1,0 +1,224 @@
+ContextMap DDDSampleMap {
+	contains ContextoCatalogo
+	contains ContextoInformacionCatastral
+	contains ContextoInformacionContractual
+    contains ContextoInformacionGeoespacial
+    contains ContextoCompanias
+    contains ContextoInformacionDeCampo
+	contains ContextoMotorDeExtraccion
+    contains ContextoConsolidacionDatos
+    contains ContextoAnalitica	
+	contains ContextoAuditoria
+    contains ContextoBigData
+
+    /* Contextos acotados*/
+	/* Flujo manual*/
+    ContextoInformacionDeCampo [D]<-[U] ContextoCompanias
+    ContextoInformacionDeCampo [D]<-[U] ContextoInformacionContractual
+    ContextoInformacionDeCampo [D]<-[U] ContextoInformacionGeoespacial
+    ContextoInformacionDeCampo [D]<-[U] ContextoInformacionCatastral
+    ContextoInformacionDeCampo [D]<-[U] ContextoConsolidacionDatos
+
+	/* Flujo automatizado*/
+    ContextoMotorDeExtraccion [D]<-[U] ContextoCompanias
+    ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionContractual
+    ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionGeoespacial
+    ContextoMotorDeExtraccion [D]<-[U] ContextoInformacionCatastral
+    ContextoMotorDeExtraccion [D]<-[U] ContextoConsolidacionDatos
+    
+	/* Flujo consolidacion de datos*/
+	ContextoConsolidacionDatos [D]<-[U] ContextoAnalitica
+
+	/* Flujo de analisis y reporte de informacion*/
+    ContextoAnalitica [D]<-[U] ContextoBigData
+    ContextoAnalitica [D]<-[U] ContextoAuditoria
+    ContextoAnalitica [D]<-[U] ContextoCatalogo
+}
+
+/* Contexto del catalogo de bienes raices. */
+BoundedContext ContextoCatalogo {
+	domainVisionStatement = "Este contexto es responsable de la gestion del catalogo de bienes raices."
+	Module Propiedades {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate Propiedades {
+            Entity Propietario
+			ValueObject UbicacionInfo
+			ValueObject CatastralInfo
+			ValueObject Caracteristicas
+            ValueObject ValorMercado
+		}
+	}
+}
+
+/* Contexto de informacion catastral. */
+BoundedContext ContextoInformacionCatastral {
+	domainVisionStatement = "Este contexto es responsable de la gestion de informacion catastral."
+	Module catastral {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate Catastral {
+			Entity Registro
+            Entity Autoridad
+            Entity Parcela
+			ValueObject Ubicacion
+			ValueObject Descripcion
+			ValueObject HistorialCambios
+		}
+	}
+}
+
+/* Contexto de informacion contractual. */
+BoundedContext ContextoInformacionContractual {
+	domainVisionStatement = "Este contexto es responsable de la gestion de informacion contractual."
+	Module contractual {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate Contractual {
+			Entity Contract
+            Entity Propiedades
+            Entity Arrendador
+            Entity Arrendatario
+			ValueObject CondicionesTerminos
+			ValueObject Duracion
+			ValueObject DetallePagos
+		}
+	}
+}
+
+/* Contexto de informacion geoespacial. */
+BoundedContext ContextoInformacionGeoespacial {
+	domainVisionStatement = "Este contexto es responsable de la gestion de informacion geoespacial."
+	Module geospational {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate Ubicacion{
+			Entity UbicacionGeoespacial
+            Entity AreaGeografica
+			ValueObject Coordinadas
+			ValueObject Direccion
+		}
+	}
+}
+
+/* Contexto de informacion de companias. */
+BoundedContext ContextoCompanias {
+	domainVisionStatement = "Este contexto es responsable de la gestion de informacion de companias."
+	Module Compania {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate Compania {
+			Entity PropiedadesVenta
+            Entity Agente
+			ValueObject Contacto
+			ValueObject UbicacionCompania
+            ValueObject CaracteristicasCompania
+		}
+	}
+}
+
+/* Contexto de informacion de campo. */
+BoundedContext ContextoInformacionDeCampo {
+	domainVisionStatement = "Este contexto es responsable de la gestion de informacion de campo."
+	Module informaciondecampo {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate InformacionDeCampo {
+			Entity RegistroInformacion
+            Entity PersonalCampo
+			ValueObject DatosDeLocalizacion
+			ValueObject DetallesInformacion
+            ValueObject InformacionAdicional
+		}
+	}
+}
+
+/* Contexto de consolidacion de datos. */
+BoundedContext ContextoConsolidacionDatos {
+	domainVisionStatement = "Este contexto es responsable de la consolidacion de datos."
+	Module consolidacion {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate ConsolidacionDatos {
+			Entity RegistrosConsolidados
+            Entity FuenteDatos
+			ValueObject Datos
+			ValueObject FechaConsolidacion
+            ValueObject Estadisticas
+		}
+	}
+}
+
+/* Contexto de analitica y reglas de negocio. */
+BoundedContext ContextoAnalitica {
+	domainVisionStatement = "Este contexto es responsable del analisis de los datos y la validacion de reglas de negocio."
+	Module analisis {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate AnalisisDatos {
+			Entity Reporte
+            Entity ReglasNegocio
+			ValueObject Conclusion
+            ValueObject IndicadoresClaves
+            ValueObject CriterioEvaluacion
+            ValueObject CondicionesExcepcion
+            ValueObject Prioridad
+		}
+	}
+}
+
+/* Contexto de auditoria de datos. */
+BoundedContext ContextoAuditoria {
+	domainVisionStatement = "Este contexto es responsable de la gestion de Big Data."
+	Module auditoria {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate AuditoriaDatos {
+			Entity RegistroAuditoria
+            Entity Resultado
+			enum FuenteDeDatos {
+	            SCRAPER, HUMAN, EXTERNA_SYSTEMS
+			}
+            ValueObject Detalles
+            ValueObject Consistencia
+            ValueObject Completitud
+            ValueObject EstatusValidacion
+		}
+	}
+}
+
+/* Contexto de big data. */
+BoundedContext ContextoBigData {
+	Module bigdata {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate BigData {
+			Entity Dataset
+            Entity ProcesoETL
+            Entity DataWarehouse
+			ValueObject Metadata
+			ValueObject IndicadorCalidad
+            ValueObject Configuraciones
+            ValueObject Patrones
+            ValueObject Metodologia
+		}
+	}
+}
+
+/* Contexto del motor de extraccion de informacion. */
+BoundedContext ContextoMotorDeExtraccion {
+	domainVisionStatement = "Este contexto es responsable extraer informacion de diferentes fuentes."
+	Module extractor {
+		basePackage = se.citerus.dddsample.domain.model
+
+		Aggregate MotorDeExtraccion {
+			Entity FuenteDatosExtraccion
+            Entity ConfiguracionExtraccion
+			ValueObject MetadataExtraccion
+            ValueObject RegistroExtraccion
+            ValueObject PatronesExtraccion
+            ValueObject EstadoExtraccion
+			ValueObject DatosExtraidos
+		}
+	}
+}
